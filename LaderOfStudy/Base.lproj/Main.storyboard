@@ -44,9 +44,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="描述" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obh-OW-KBh">
-                                            <rect key="frame" x="16" y="91" width="343" height="20.5"/>
+                                            <rect key="frame" x="21" y="96" width="333" height="20.5"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCf-22-YYA">
@@ -56,8 +56,14 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pyf-Fa-Qz1">
-                                            <rect key="frame" x="16" y="119.5" width="343" height="59.5"/>
+                                            <rect key="frame" x="16" y="124.5" width="343" height="54.5"/>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXY-En-Mbw">
+                                            <rect key="frame" x="330.5" y="11" width="28.5" height="13.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Pyf-Fa-Qz1" firstAttribute="top" secondItem="obh-OW-KBh" secondAttribute="bottom" constant="8" id="3Fv-5R-ohp"/>
@@ -65,18 +71,22 @@
                                         <constraint firstItem="bLB-JJ-eiC" firstAttribute="leading" secondItem="f7d-Se-PBJ" secondAttribute="leadingMargin" id="ByO-zf-WaL"/>
                                         <constraint firstItem="Pyf-Fa-Qz1" firstAttribute="trailing" secondItem="f7d-Se-PBJ" secondAttribute="trailingMargin" id="CBU-Ei-pGj"/>
                                         <constraint firstItem="8sg-3d-uMB" firstAttribute="top" secondItem="f7d-Se-PBJ" secondAttribute="topMargin" id="JEy-Tu-vmf"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="nXY-En-Mbw" secondAttribute="trailing" id="KQP-y4-Okp"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="dCf-22-YYA" secondAttribute="trailing" constant="8" id="Szm-mY-r4t"/>
-                                        <constraint firstItem="obh-OW-KBh" firstAttribute="leading" secondItem="f7d-Se-PBJ" secondAttribute="leadingMargin" id="U8Q-Of-zSC"/>
+                                        <constraint firstItem="obh-OW-KBh" firstAttribute="leading" secondItem="f7d-Se-PBJ" secondAttribute="leadingMargin" constant="5" id="U8Q-Of-zSC"/>
+                                        <constraint firstItem="nXY-En-Mbw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8sg-3d-uMB" secondAttribute="trailing" constant="5" id="Wxc-Ji-fRt"/>
                                         <constraint firstItem="Pyf-Fa-Qz1" firstAttribute="leading" secondItem="f7d-Se-PBJ" secondAttribute="leadingMargin" id="bA7-C6-1vm"/>
                                         <constraint firstItem="dCf-22-YYA" firstAttribute="top" secondItem="8sg-3d-uMB" secondAttribute="bottom" constant="8" id="huE-7a-WLD"/>
                                         <constraint firstItem="8sg-3d-uMB" firstAttribute="leading" secondItem="bLB-JJ-eiC" secondAttribute="trailing" constant="8" id="iGa-Pr-nqa"/>
-                                        <constraint firstItem="obh-OW-KBh" firstAttribute="top" secondItem="bLB-JJ-eiC" secondAttribute="bottom" id="qYB-su-OlK"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="obh-OW-KBh" secondAttribute="trailing" id="vkV-8S-Md9"/>
+                                        <constraint firstItem="obh-OW-KBh" firstAttribute="top" secondItem="bLB-JJ-eiC" secondAttribute="bottom" constant="5" id="qYB-su-OlK"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="obh-OW-KBh" secondAttribute="trailing" constant="5" id="vkV-8S-Md9"/>
                                         <constraint firstItem="Pyf-Fa-Qz1" firstAttribute="bottom" secondItem="f7d-Se-PBJ" secondAttribute="bottomMargin" id="vvB-Mx-5s2"/>
+                                        <constraint firstItem="nXY-En-Mbw" firstAttribute="top" secondItem="f7d-Se-PBJ" secondAttribute="topMargin" id="yn7-eP-gYg"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="detail" destination="obh-OW-KBh" id="OQy-5C-DXd"/>
+                                    <outlet property="detailType" destination="nXY-En-Mbw" id="uCm-wV-CdH"/>
                                     <outlet property="imageDetail" destination="Pyf-Fa-Qz1" id="PjP-39-q6S"/>
                                     <outlet property="time" destination="dCf-22-YYA" id="LK6-g5-EBD"/>
                                     <outlet property="title" destination="8sg-3d-uMB" id="VOX-W1-wnf"/>

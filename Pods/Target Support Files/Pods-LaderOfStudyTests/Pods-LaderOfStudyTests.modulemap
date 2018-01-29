@@ -1,0 +1,6 @@
+framework module Pods_LaderOfStudyTests {
+  umbrella header "Pods-LaderOfStudyTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

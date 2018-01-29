@@ -8,42 +8,66 @@
 
 import UIKit
 
+
 class HomeListTableViewController: UITableViewController {
 
     let recordList = RecordList()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.tintColor = UIColor.orange
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+}
 
-    // MARK: - Table view data source
+extension HomeListTableViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let model = recordList.data[indexPath.row]
+        switch model.detailType {
+        case .Web:
+            let wkWebVC = WKWebViewController()
+            wkWebVC.website = model.detailUrl!
+            self.navigationController?.pushViewController(wkWebVC, animated: true)
+            break
+        case .Class:
+            if let childVcType = model.detailPage as? UIViewController.Type {
+                self.navigationController?.pushViewController(childVcType.init(), animated: true)
+            }
+            break
+        default:
+            
+            break
+        }
 
+        
+    }
+}
+
+extension HomeListTableViewController {
+    
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recordList.data.count
     }
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "homeListCell", for: indexPath) as! HomeListCell
         cell.model = recordList.data[indexPath.row]
         return cell
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+extension HomeListTableViewController {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
+}
+
+

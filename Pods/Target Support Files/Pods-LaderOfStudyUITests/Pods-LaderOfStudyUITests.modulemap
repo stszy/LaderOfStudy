@@ -1,0 +1,6 @@
+framework module Pods_LaderOfStudyUITests {
+  umbrella header "Pods-LaderOfStudyUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
